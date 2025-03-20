@@ -1,0 +1,15 @@
+Per la creazione ambiente:
+
+- clonare il progetto
+- aprire la cartella SoundSphere in vscode
+- aprire il terminale e posizionarsi dentro la cartella SoundSphere
+- compilare il docker compose con il comando docker-compose build
+- avviare docker desktop
+- creare i container con il comando docker-compose up
+
+a questo punto siamo pronti ad operare.
+Agganciarsi al database usando i seguenti parametri
+- host: localhost
+- username: postgres
+- password: adminPW
+- nome del database SoundSphereDB
