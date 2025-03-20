@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  postgres:
+    build:
+      context: ./DB  # Indica la cartella dove si trova il Dockerfile
+      dockerfile: Dockerfile  # Il nome del Dockerfile (opzionale se è chiamato "Dockerfile")
+    container_name: Database
+    environment:
+      POSTGRES_PASSWORD: adminPW
+      POSTGRES_USER: postgres
+      POSTGRES_DB: SoundSPhereDB
+    volumes:
+      - ./DB/Data:/var/lib/postgresql/data  # Monta tutta la directory dei dati
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres_network
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  postgres_network:
+    driver: bridge
